@@ -3,6 +3,11 @@
 class ActivityPub::ActorSerializer < ActiveModel::Serializer
   include RoutingHelper
 
+  context :security
+
+  context_extensions :manually_approves_followers, :featured, :also_known_as,
+                     :moved_to, :property_value, :hashtag, :emoji
+
   attributes :id, :type, :following, :followers,
              :inbox, :outbox, :featured,
              :preferred_username, :name, :summary,

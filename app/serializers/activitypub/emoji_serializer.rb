@@ -3,6 +3,8 @@
 class ActivityPub::EmojiSerializer < ActiveModel::Serializer
   include RoutingHelper
 
+  context_extensions :emoji
+
   attributes :id, :type, :name, :updated
 
   has_one :icon, serializer: ActivityPub::ImageSerializer

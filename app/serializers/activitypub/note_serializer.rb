@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class ActivityPub::NoteSerializer < ActiveModel::Serializer
+  context_extensions :atom_uri, :conversation, :sensitive,
+                     :hashtag, :emoji, :focal_point
+
   attributes :id, :type, :summary,
              :in_reply_to, :published, :url,
              :attributed_to, :to, :cc, :sensitive,

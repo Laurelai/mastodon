@@ -2,6 +2,8 @@
 
 class ActivityPub::DeleteSerializer < ActiveModel::Serializer
   class TombstoneSerializer < ActiveModel::Serializer
+    context_extensions :atom_uri
+
     attributes :id, :type, :atom_uri
 
     def id

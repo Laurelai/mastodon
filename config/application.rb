@@ -13,6 +13,7 @@ require_relative '../lib/paperclip/video_transcoder'
 require_relative '../lib/mastodon/snowflake'
 require_relative '../lib/mastodon/version'
 require_relative '../lib/devise/ldap_authenticatable'
+require_relative '../lib/active_model/serializer'
 
 Dotenv::Railtie.load
 
