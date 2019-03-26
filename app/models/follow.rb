@@ -19,10 +19,9 @@ class Follow < ApplicationRecord
   belongs_to :account
   belongs_to :target_account, class_name: 'Account'
 
-  has_one :notification, as: :activity, dependent: :destroy
 
   validates :account_id, uniqueness: { scope: :target_account_id }
-  validates_with FollowLimitValidator, on: :create
+ 
 
   scope :recent, -> { reorder(id: :desc) }
 
